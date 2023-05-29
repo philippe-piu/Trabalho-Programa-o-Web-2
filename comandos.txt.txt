@@ -1,0 +1,8 @@
+Escolha um diretório e crie uma pasta
+mkdir nome-projeto-exemplo;
+
+Iniciando o projeto
+npm init
+
+Instalação de dependências
+npm install react react-dom
