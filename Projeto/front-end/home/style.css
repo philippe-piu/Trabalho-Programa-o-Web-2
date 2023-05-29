@@ -1,0 +1,33 @@
+/*Style*/
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  background-color: darkgray;
+}
+
+nav{
+  background-color: #808080;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: aliceblue;
+  height: 8vh;
+}
+
+.logo{
+  text-decoration: none;
+}
+
+.ulLista{
+  list-style: none;
+  display: flex;
+}
+
+.ulLista li{
+  letter-spacing: 3px;
+  margin-left: 32px;
+}
+

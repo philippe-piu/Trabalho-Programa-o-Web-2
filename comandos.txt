@@ -6,3 +6,11 @@ npm init
 
 Instalação de dependências
 npm install react react-dom
+
+Instalação do Express
+npm install express
+
+Iniciar o servidor pelo Express
+node index.js
+navegador localhost:3000
+
