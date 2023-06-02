@@ -1,16 +1,30 @@
-Escolha um diretório e crie uma pasta
-mkdir nome-projeto-exemplo;
+//Instalar o Node.js = v18.16.0
+https://nodejs.org/en
 
-Iniciando o projeto
-npm init
+//Criação de estrutura do projeto express
+npx express-generator
 
-Instalação de dependências
-npm install react react-dom
+//Instalação de dependências
+npm install
 
-Instalação do Express
-npm install express
+//Rodar a aplicação 
+npm star
 
-Iniciar o servidor pelo Express
-node index.js
-navegador localhost:3000
+//No navegador
+http://localhost:3000/
 
+//Para fazer alterações e não precisar ficar reiniciando o servidor com npm start instale o nodemon
+npm install --save-dev nodemon
+
+//Agora vá na package.json e altere conforme está abaixo
+"scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+
+  //Instalação do Mustache
+  npm install mustache-express
+  
+
+  //Rodar aplicação
+  npm run dev
