@@ -1,8 +1,42 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+/*Style do projeto*/
+*{
+  margin:0;
+  padding: 0;
 }
 
-a {
-  color: #00B7FF;
+body{
+  background-color: black;
+}
+
+/*Style do projeto*/
+*{
+  margin:0;
+  padding: 0;
+}
+
+.background{
+  background-color: black;
+}
+
+h1{
+  color: antiquewhite;
+}
+
+header{
+  background-color: #505050;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav{
+  font-family: 'Saira Stencil One', cursive;
+  font-size: 20px;
+}
+
+ul{
+  margin-left: 5px;
+}
+
+a{
+  color: aliceblue;
 }
