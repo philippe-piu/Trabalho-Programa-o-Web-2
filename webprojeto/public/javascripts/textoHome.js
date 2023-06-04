@@ -5,7 +5,7 @@ fetch('/descricao/resumo.txt')
   .then(text => {
     //Exibindo uma mensagem no navegagor que foi 
     console.log("Texto exibido na tela");
-    //pego as informações no no mustache onde eu define o pre com id texto
+    //pego as informações no no mustache onde eu define o div com id texto
     document.getElementById('texto').innerText = text.replace(/\n/g, "<br>");
   })
   .catch(error => {
