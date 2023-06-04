@@ -8,11 +8,13 @@
   background-color: black;
 }
 
+/*Body*/
 body{
   display: flex;
   flex-direction: column;
 }
 
+/*Header*/
 header{
   background-color: #505050;
   display: flex;
@@ -32,14 +34,11 @@ a{
   color: aliceblue;
 }
 
-footer{
-  margin-top: auto;
-  min-height: 100vh
-}
-
+/*Footer*/
 footer .container-fluid{
   background-color: #505050;
   display: flex;
+  margin-top: auto;
 }
 
 .msg p{
@@ -60,6 +59,7 @@ footer .container-fluid{
   margin-right: 8px;
 }
 
+/*Main*/
 main{
   flex: 1;
   padding: 20px;
@@ -67,4 +67,9 @@ main{
 
 h1{
   color: aliceblue;
+}
+
+.imageHome{
+  display: flex;
+  justify-content: center;
 }
