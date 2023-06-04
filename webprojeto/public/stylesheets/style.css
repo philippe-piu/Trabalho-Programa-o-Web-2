@@ -73,3 +73,13 @@ h1{
   display: flex;
   justify-content: center;
 }
+
+/*Texto do Arquivo txt*/
+.texto{
+  color: aliceblue;
+  font-size: 20px;
+  justify-content: center;
+  font-family: 'Roboto';
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
