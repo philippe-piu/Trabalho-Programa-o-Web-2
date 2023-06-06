@@ -24,6 +24,10 @@ npm install --save-dev nodemon
 
   //Instalação do Mustache
   npm install mustache-express
+
+  //Intalar o Validador Joi para formularios
+  npm install joi
+  e npm install @hapi/joi
   
 
   //Rodar aplicação
