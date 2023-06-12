@@ -7,6 +7,11 @@
 .background{
   background-color:#0E0E0E;
   flex-direction: column;
+  min-height: 100vh;
+}
+
+.background main{
+  flex: 1 ;
 }
 
 /*Header*/
@@ -30,40 +35,32 @@ li .txtColor{
 }
 
 /*Footer*/
-.ajusteFooter{
-  height: 40px;
-}
-
 footer{
   background-color: #292727;
-  display: flex;
-  margin-top: 20px;
-  padding: 20px;
-  justify-content: space-between;
-  align-items: center
+  flex-direction: column;
+}
+
+.posi{
+  margin-top: 60px;
+}
+
+.footerOtrasPag{
+  margin-top: 100px;
 }
 
 .msg p{
-  margin: -6px;
+  margin-left: 15px;
+  margin-right: 15px;
   color: aliceblue;
   font-family: 'Roboto', sans-serif;
   font-size: 10px;
 }
 
 .favicon{
-  display: flex;
-  justify-content: flex-end;
-  margin: -30px;
+  margin-left: 15px;
+  color: aliceblue;
 }
 
-.favicon a{
-  margin: 6px;
-  margin-right: 8px;
-}
-
-.favicon a i {
-  color: #030303;
-}
 
 /*Main Login*/
 .main{
