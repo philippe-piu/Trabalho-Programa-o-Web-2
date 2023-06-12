@@ -8,19 +8,21 @@
       {{>header}}
       <!--Conteúdo Da Pagina-->
       <main class="main">
-        <div class="texto">
-          <div id="texto">
-            <!--Importe do javascript usado aqui-->
-            <script src="javascripts/textoRotaInicial.js"></script>
-          </div>
+        <div class="titulo">
+          <h1>Contact</h1>
         </div>
         <section class="localLogin">
-          <div class="imgLogo">
-            <img src="/images/logoWolf.PNG" />
+          <div class="formMsg">
+            <div class="posiImg">
+              <img src="/images/logoWolf.PNG" />
+            </div>
+            <!--Importe Template----->
+            {{>formContact}}
           </div>
-          {{>formLogin}}
         </section>
       </main>
+      <!--Rodapé-->
+      {{>footer}}
     </body>
   </html>
 </html>

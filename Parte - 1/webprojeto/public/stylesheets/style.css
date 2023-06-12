@@ -164,6 +164,55 @@ margin-top: 60vh;
   height: auto;
 }
 
+
+/* Comunity*/
+.formMsg{
+  border-radius: 8px;
+  background-color: #292727;
+  width: 355px;
+  height: 460px;
+  padding: 35px;
+  align-items: center;
+  justify-content: center;
+}
+
+.formMsg form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.formMsg input{
+  margin-top: 10px;
+  border-radius: 8px;
+  font-family: 'Roboto';
+  background-color: #CFCDCD;
+  color:black;
+  outline: none;
+  padding-left: 10px;
+}
+
+.formMsg textarea{
+  margin-top: 10px;
+  border-radius: 8px;
+  font-family: 'Roboto';
+  background-color: #CFCDCD;
+  color:black;
+  outline: none;
+  padding-left: 10px;
+}
+
+.formMsg img{
+  width: 60px;
+  height: auto;
+}
+
+/*Trava o textarea*/
+textarea[name=mensagem] {
+  resize: none;
+}
+
+
 input::placeholder{
   color:black;
   font-size: 12px;

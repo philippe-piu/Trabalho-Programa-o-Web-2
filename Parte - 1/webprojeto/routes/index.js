@@ -32,7 +32,12 @@ router.get('/description', function (req, res, next) {
   res.render('description')
 })
 
-//Rota COmunity
+//Rota Contact
+router.get('/contact', function (req, res, next) {
+  res.render('contact')
+})
+
+//Rota Comunity
 router.get('/comunity', function (req, res, next) {
   res.render('comunity')
 })
