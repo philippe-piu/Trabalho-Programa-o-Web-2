@@ -44,8 +44,14 @@ footer{
   margin-top: 60px;
 }
 
+/*Footer Home*/
 .footerOtrasPag{
   margin-top: 100px;
+}
+
+/*footer About*/
+.footerabout{
+margin-top: 60vh;
 }
 
 .msg p{
@@ -178,6 +184,17 @@ form [type="submit"]{
 }
 .textoP p a{
   color: #5568FE;
+}
+
+.paragrafoTemplate{
+  margin-top: 30px;
+  margin-left: 55px;
+  margin-right: 30px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto';
+  font-size: 14px;
 }
 
 

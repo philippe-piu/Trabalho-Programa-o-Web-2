@@ -1,0 +1,5 @@
+Será desenvolvido o site fictício para a matéria de Web 2, chamado Wolf Games, um site de compra de jogos digitais baseados na Steam e Epic Games.
+
+Nele terá as seguintes seções: página inicial, login, cadastro, home, sobre, comunidade e loja. Onde o usuário poderá fazer compras, editar seu cadastro, itens da compra e montar uma biblioteca.
+
+As ferramentas que serão utilizadas são: Node.js, Express, Nodemon, Mustache, MongoDB, API REST e a linguagem JavaScript. Caso haja novas ferramentas, será feita uma atualização no futuro do documento.
