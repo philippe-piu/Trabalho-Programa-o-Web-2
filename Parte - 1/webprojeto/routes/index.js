@@ -1,6 +1,7 @@
 var express = require('express')
 var router = express.Router()
 var TaskSchema = require('../public/javascripts/TaskSValidador')
+const {chamadaForm} = require('../public/javascripts/contactForm')
 
 /*Rota Inicial */
 router.get('/', function (req, res, next) {
@@ -46,6 +47,9 @@ router.get('/comunity', function (req, res, next) {
 router.get('/store', function (req, res, next) {
   res.render('store')
 })
+
+//Endereço envio de mensagem
+router.post('/contact/teste', chamadaForm);
 
 //Validação do Formulario
 router.post('/home', (req, res) => {
