@@ -66,7 +66,7 @@ router.post('/home', (req, res) => {
     const senha = value.senha
 
     //condicional para verificar se o email e senha já definido neste momento é valido ou sendo ou não valido ele imprimi mensagens definidas abaixo.
-    if (email === process.env.EMAIL && senha === process.env.SENHA) {
+    if (email === 'teste@gmail.com' && senha === 'teste123') {
       //res.send("Email e senha válidos");
       res.render('home')
     } else {

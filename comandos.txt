@@ -29,6 +29,11 @@ npm install --save-dev nodemon
   npm install joi
   e npm install @hapi/joi
   
+  //Instalar o nodemailer
+  npm i nodemailer
+
+  //Instalar o dotenv
+  npm install dotenv
 
   //Rodar aplicação
   npm run dev
