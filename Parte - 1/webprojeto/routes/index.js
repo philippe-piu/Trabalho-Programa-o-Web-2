@@ -2,7 +2,6 @@ var express = require('express')
 var router = express.Router()
 var TaskSchema = require('../public/javascripts/TaskSValidador')
 const {chamadaForm} = require('../public/javascripts/contactForm')
-require('dotenv').config();
 
 /*Rota Inicial */
 router.get('/', function (req, res, next) {
