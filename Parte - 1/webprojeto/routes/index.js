@@ -2,6 +2,7 @@ var express = require('express')
 var router = express.Router()
 var TaskSchema = require('../public/javascripts/TaskSValidador')
 const {chamadaForm} = require('../public/javascripts/contactForm')
+require('dotenv').config();
 
 /*Rota Inicial */
 router.get('/', function (req, res, next) {
@@ -65,7 +66,7 @@ router.post('/home', (req, res) => {
     const senha = value.senha
 
     //condicional para verificar se o email e senha já definido neste momento é valido ou sendo ou não valido ele imprimi mensagens definidas abaixo.
-    if (email === 'teste@gmail.com' && senha === 'teste123') {
+    if (email === process.env.EMAIL && senha === process.env.SENHA) {
       //res.send("Email e senha válidos");
       res.render('home')
     } else {

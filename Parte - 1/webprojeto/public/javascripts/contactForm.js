@@ -1,6 +1,7 @@
 /*Relacionado a formContact.mustache */
 //Import nodemailer
 const nodemailer = require('nodemailer');
+require('dotenv').config();
 
 //evento de envio do formulario
 exports.chamadaForm = (req, res) => {
@@ -10,8 +11,8 @@ exports.chamadaForm = (req, res) => {
 
   //Configuração do email que vai receber a mensagem no mailtrap
   var smtp = nodemailer.createTransport({
-    host: "sandbox.smtp.mailtrap.io",
-    port: 2525,
+    host: process.env.HOST,
+    port: process.env.PORT,
     auth: {
       //Senha e usuario disponibilizado no Integrations no mailtrap
       user: "5fe90707358a9b",
