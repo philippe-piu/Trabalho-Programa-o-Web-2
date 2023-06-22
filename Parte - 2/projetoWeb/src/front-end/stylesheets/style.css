@@ -246,4 +246,15 @@ form [type="submit"]{
   font-size: 14px;
 }
 
+.paragrafoTemplate p{
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lista{
+display:flex;
+justify-content: center;
+}
 

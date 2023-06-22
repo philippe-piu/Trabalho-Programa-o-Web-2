@@ -8,26 +8,22 @@
       {{>static/header}}
       <!--Conteúdo Da Pagina-->
       <main class="main">
-        <div class="texto">
-          <div id="texto">
-            <!--Importe do Template loginTemplate.mustache-->
-            {{>static/loginTemplate}}
-          </div>
+        <div class="titulo">
+          <h1>Contact</h1>
         </div>
         <section class="localLogin">
-          <div class="loginQua">
+          <div class="formMsg">
             <div class="posiImg">
               <img src="/images/logoWolf.PNG" />
             </div>
             <!--Importe Template----->
-            {{>dynamic/formLogin}}
+            <script src="javascripts/contactForm.js"></script>
+            {{>dynamic/formContact}}
           </div>
         </section>
       </main>
       <!--Rodapé-->
-      <div class="footerOtrasPag">
-        {{>static/footer}}
-      </div>
+      {{>static/footer}}
     </body>
   </html>
 </html>
