@@ -1,0 +1,21 @@
+{
+  "name": "projeto-web",
+  "version": "1.0.0",
+  "description": "Trabalho da disciplina Web 2 um site onde o usuário pode se cadastar e inserir seus jogos para venda.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -e js,mustache ./server.js"
+  },
+  "author": "Philippe",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mustache-express": "^1.3.2",
+    "nodemailer": "^6.9.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

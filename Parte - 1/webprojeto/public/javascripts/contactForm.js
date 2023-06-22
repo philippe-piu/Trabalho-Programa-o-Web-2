@@ -10,37 +10,23 @@ exports.chamadaForm = (req, res) => {
   const { nome, email, assunto, mensagem } = req.body
 
   //Configuração do email que vai receber a mensagem no mailtrap
-  /*
+  
   var smtp = nodemailer.createTransport({
-    host: "sandbox.smtp.mailtrap.io",
-    port: 587,
+    host: process.env.HOST,
+    port: process.env.PORT_P,
     auth: {
       //Senha e usuario disponibilizado no Integrations no mailtrap
-      user:"5fe90707358a9b",
-      pass: "fe09415cbe9632"
+      user:process.env.USER_EMAIL,
+      pass: process.env.USER_PASS
     }
   });
-  */
-  var smtp = nodemailer.createTransport({
-    
-    host: "smtp.office365.com",
-    port: 587,
-    secure:false,
-    auth: {
-      //Senha e usuario disponibilizado no Integrations no mailtrap
-      
-      user:process.env.USER,
-      pass:"teste123456"
-    }
-  });
-  console.log(process.env.USER);
 
   //criação da mensagem do email
   var message = {
     //endereço de email do remetente
-    from: "teste5080@hotmail.com",
+    from: process.env.USER_EMAIL,
     //endereço de email do destinatario
-    to: ['teste2@TrabalhoWeb.com.br'],
+    to: process.env.TO,
     subject: assunto,
     text: `Nome: ${nome}\nE-mail: ${email}\nAssunto: ${assunto}\n\n${mensagem}`
   }
