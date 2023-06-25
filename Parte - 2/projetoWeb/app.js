@@ -13,7 +13,15 @@ dotenv.config();
 
 //Conexão com o Banco de dados MongoDB
 // URL de conexão do MongoDB
-
+mongoose.connect(process.env.URL_MONGO, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'Erro de conexão com o banco de dados:'));
+db.once('open', () => {
+  console.log('Conexão com o banco de dados estabelecida.');
+});
 
 //Configuração de Templates
 //Importa e instancia o mustache
@@ -24,8 +32,10 @@ app.set('view engine', 'mustache');
 //Não armazenar no cache fazer ele caso aja alterações ele rodar as novas alterações
 mustacheExpress.cache = null;
 
-// Middlewares
-app.use(express.urlencoded({ extended: true }));
+// Configuração do Express
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }))
+
 
 
 // Servir arquivos estáticos

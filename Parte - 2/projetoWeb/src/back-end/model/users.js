@@ -1,12 +1,25 @@
-//Classe Usuário
-class Users{
-  //Método Contrutor para inializar os valores passados por ele.
-  constructor(idUsers, name, email, password){
-    this.idUsers = idUsers;
-    this.name = name;
-    this.email = email;
-    this.password = password;
-  }
-}
+//Importe mongoose
+const mongoose = require('mongoose');
 
-module.exports = Users;
+//Criando um novo Schema 
+const userSchema = new mongoose.Schema({
+  //Campos dentro do Schema
+  name: {
+    type: String,
+    required: true
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  password: {
+    type: String,
+    required: true
+  }
+});
+
+//Craiação do modelo pro exportes
+const User = mongoose.model('User', userSchema);
+
+module.exports = User;

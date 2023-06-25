@@ -14,6 +14,12 @@ router.get('/contact', function (req, res, next) {
   res.render(path.join(__dirname, '../../front-end/views/dynamic/contact'))
 })
 
+//Home
+router.get('/home', function (req, res, next) {
+  res.render(path.join(__dirname, '../../front-end/views/dynamic/home'))
+})
+
+
 
 //Rotas Estáticas
 //Rota Description Author
