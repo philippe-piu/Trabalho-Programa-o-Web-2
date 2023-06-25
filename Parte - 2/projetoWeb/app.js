@@ -18,7 +18,9 @@ mongoose.connect(process.env.URL_MONGO, {
   useUnifiedTopology: true,
 });
 const db = mongoose.connection;
+//erro na conexão
 db.on('error', console.error.bind(console, 'Erro de conexão com o banco de dados:'));
+//abrindo conexão com o banco aberta
 db.once('open', () => {
   console.log('Conexão com o banco de dados estabelecida.');
 });

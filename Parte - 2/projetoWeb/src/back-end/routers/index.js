@@ -9,6 +9,10 @@ router.get('/', (req, res) => {
   res.render(path.join(__dirname, '../../front-end/views/dynamic/login'))
 })
 
+router.get('/register', (req, res) => {
+  res.render(path.join(__dirname, '../../front-end/views/dynamic/register'))
+})
+
 //Rota Contatic
 router.get('/contact', function (req, res, next) {
   res.render(path.join(__dirname, '../../front-end/views/dynamic/contact'))
