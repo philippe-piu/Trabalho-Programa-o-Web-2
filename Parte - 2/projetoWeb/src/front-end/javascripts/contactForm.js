@@ -2,7 +2,6 @@
 //Import nodemailer e dotenv
 const nodemailer = require('nodemailer');
 
-console.log(process.env.USER);
 //evento de envio do formulario
 exports.chamadaForm = (req, res) => {
 

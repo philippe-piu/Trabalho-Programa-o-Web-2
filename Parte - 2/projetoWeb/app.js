@@ -6,9 +6,14 @@ const router = require('../projetoWeb/src/back-end/routers/index');
 const PORT = 3000;
 const mustacheExpress = require("mustache-express");
 const dotenv = require('dotenv');
+var mongoose = require('mongoose');
 
 //Configuração do dotev do arquivo .env
 dotenv.config();
+
+//Conexão com o Banco de dados MongoDB
+// URL de conexão do MongoDB
+
 
 //Configuração de Templates
 //Importa e instancia o mustache
@@ -18,6 +23,9 @@ app.set('views', path.join(__dirname, 'src', 'front-end', 'views'));
 app.set('view engine', 'mustache');
 //Não armazenar no cache fazer ele caso aja alterações ele rodar as novas alterações
 mustacheExpress.cache = null;
+
+// Middlewares
+app.use(express.urlencoded({ extended: true }));
 
 
 // Servir arquivos estáticos
