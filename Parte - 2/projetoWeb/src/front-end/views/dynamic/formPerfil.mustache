@@ -1,10 +1,10 @@
-<form action="/perfil/{{ user._id }}" method="POST">
+<form action="/perfil/update/{{user._id}}" method="POST">
   <input
     class="input"
     type="text"
     id="name"
     name="name"
-    value="{{ task.name }}"
+    value="{{user.name}}"
     placeholder="Nome Ex: Maria Santos"
     autofocus
     required
@@ -14,7 +14,7 @@
     type="text"
     id="cpf"
     name="cpf"
-    value="{{ task.cpf }}"
+    value="{{user.cpf}}"
     placeholder="CPF Ex: 00022255589"
     autofocus
     required
@@ -24,7 +24,7 @@
     type="email"
     id="email"
     name="email"
-    value="{{ task.email }}"
+    value="{{user.email}}"
     placeholder="Email Ex: teste@gmail.com"
     required
   />
@@ -33,10 +33,8 @@
     id="password"
     type="password"
     name="password"
-    value="{{ task.password }}"
-    placeholder=" Senha Ex: senha123"
+    placeholder="Senha Ex: senha123"
   />
-  <input class="input" id="botao" type="submit" value="
-  Change account" />
-  <input class="input" id="botao2" type="submit" value="Delete account" />
+  <input class="input" id="botao" type="submit" value="Alterar Conta" />
+  <input class="input" id="botao2" type="submit" value="Excluir Conta" />
 </form>

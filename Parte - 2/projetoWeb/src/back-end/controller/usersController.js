@@ -19,18 +19,18 @@ exports.createUser = async ({ name, cpf, email, password }) => {
 };
 
 
-//Função para editar um usuario
+// Função para atualizar um usuário
 exports.updateUser = async (req, res) => {
   try {
-    //pego o id do usuario cadastrado
     const { id } = req.params;
-    //procuro o usuario pelo id
-    const user = await Users.findByIdAndUpdate(id, req.body);
-    res.json({ message: 'Usuário atualizado com sucesso.' });
+    const { name, cpf, email, password } = req.body;
+    const updatedUser = await Users.findByIdAndUpdate(id, { name, cpf, email, password }, { new: true });
+    res.render('perfil', { user: updatedUser.toObject() });
   } catch (error) {
     res.status(500).json({ error: 'Erro ao atualizar o usuário.' });
   }
 };
+
 
 //Função para deletar um usuario 
 exports.deleteUser = async (req, res) => {

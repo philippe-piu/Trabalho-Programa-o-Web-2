@@ -14,8 +14,13 @@
         <section class="localLogin">
           <div class="loginQua">
             <div class="posiImg">
-              <img src="/images/logoWolf.PNG" />
+              <div class="perfil">
+                <p>Nome: {{ user.name }}<p>
+                  <p>CPF: {{ user.cpf }}<p>
+                  <p>Email: {{ user.email }}</p>
+              </div>
             </div>
+
             {{>dynamic/formPerfil}}
           </div>
         </section>

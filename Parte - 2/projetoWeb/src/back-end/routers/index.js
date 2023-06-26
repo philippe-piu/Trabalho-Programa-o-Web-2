@@ -5,6 +5,7 @@ const {chamadaForm} = require('../../front-end/javascripts/contactForm')
 const registerController = require('../controller/registerController');
 const loginController = require('../controller/loginController');
 const perfilController = require('../controller/perfilController');
+const usersController = require('../controller/usersController');
 
 
 //Rotas Dinâmicas
@@ -61,6 +62,8 @@ router.post('/register', registerController.register);
 router.post('/login', loginController.login);
 
 
-router.get('/perfil/:id', perfilController.getUser);
+// Rota de atualização do perfil
+router.post('/perfil/update/:id', usersController.updateUser);
+
 
 module.exports = router

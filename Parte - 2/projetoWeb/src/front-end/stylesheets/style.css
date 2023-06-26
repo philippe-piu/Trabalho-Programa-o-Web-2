@@ -258,3 +258,10 @@ display:flex;
 justify-content: center;
 }
 
+p{
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto';
+  font-size: 14px;
+  color: white;
+}
