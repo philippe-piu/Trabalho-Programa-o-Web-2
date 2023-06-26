@@ -1,23 +1,11 @@
 //Importes
 const Users = require('../model/users')
-const Joi = require('@hapi/joi')
+const TaskSValidadorRegister = require('../../front-end/javascripts/TaskSValidadorRegister')
 
 exports.register = async (req, res) => {
-  //Para fazer um cadastro precisa atender alguns requisitos definidos com ajuda do Joi
-  const schema = Joi.object({
-    //name é um tipo string com no minimo 8 e maximo de 10 e o required obrigatorio campo não pode ser em branco
-    name: Joi.string().min(4).max(50).required(),
-    //Cpf é um tipo string com no minimo 8 e maximo de 10 e o required obrigatorio campo não pode ser em branco
-    cpf: Joi.string().min(8).max(10).required(),
-    //email é uma string do tipo email assim ele pega o tipo padrão de construção de email e o required lembra que é obrigatorio não pode ficar em branco.
-    email: Joi.string().email().required(),
-    //senha é do tipo string para validar precisa de no minimo 8 caracteres e maximo de 10 pode ser misturado com numeros e o required lembra que é obrigatorio não pode ficar em branco.
-    password: Joi.string().min(4).max(16).required()
-  })
-
   try {
-    //Validação dos dados do formulario
-    await schema.validateAsync(req.body)
+    //Para fazer um cadastro precisa atender alguns requisitos definidos com ajuda do Joi
+    await TaskSValidadorRegister.validateAsync(req.body)
 
     //Extrai as informações do formulario
     const { name, cpf, email, password } = req.body

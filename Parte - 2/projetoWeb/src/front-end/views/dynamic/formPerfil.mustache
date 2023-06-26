@@ -1,4 +1,4 @@
-<form action="/register" method="POST">
+<form action="/perfil/{{ user._id }}" method="POST">
   <input
     class="input"
     type="text"
@@ -36,5 +36,7 @@
     value="{{ task.password }}"
     placeholder=" Senha Ex: senha123"
   />
-  <input class="input" id="botao" type="submit" value="Create account" />
+  <input class="input" id="botao" type="submit" value="
+  Change account" />
+  <input class="input" id="botao2" type="submit" value="Delete account" />
 </form>
