@@ -1,0 +1,40 @@
+<form action="/perfil/update/{{user._id}}" method="POST">
+  <input
+    class="input"
+    type="text"
+    id="name"
+    name="name"
+    value="{{user.name}}"
+    placeholder="Nome Ex: Maria Santos"
+    autofocus
+    required
+  />
+  <input
+    class="input"
+    type="text"
+    id="cpf"
+    name="cpf"
+    value="{{user.cpf}}"
+    placeholder="CPF Ex: 00022255589"
+    autofocus
+    required
+  />
+  <input
+    class="input"
+    type="email"
+    id="email"
+    name="email"
+    value="{{user.email}}"
+    placeholder="Email Ex: teste@gmail.com"
+    required
+  />
+  <input
+    class="input"
+    id="password"
+    type="password"
+    name="password"
+    placeholder="Senha Ex: senha123"
+  />
+  <input class="input" id="botao" type="submit" value="Alterar Conta" />
+  <input class="input" id="botao2" type="submit" value="Excluir Conta" />
+</form>

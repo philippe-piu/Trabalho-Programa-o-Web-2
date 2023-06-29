@@ -1,0 +1,30 @@
+<form action="/game" method="POST">
+  <input
+    class="input"
+    type="title"
+    id="title"
+    name="title"
+    value="{{ task.title }}"
+    placeholder="Ex: Super Mario World"
+    autofocus
+    required
+  />
+  <textarea
+    id="description"
+    name="description"
+    placeholder="Digite sua descrição aqui"
+    rows="5"
+    cols="50"
+    required
+  ></textarea>
+  <input
+    class="input"
+    id="price"
+    type="price"
+    name="price"
+    value="{{ task.price }}"
+    placeholder="Ex: 70"
+  />
+  <input class="input" id="botao" type="submit" value="Buy" />
+</form>
+

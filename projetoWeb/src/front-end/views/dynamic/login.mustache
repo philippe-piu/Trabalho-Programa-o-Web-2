@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <html>
+    <!---Head--->
+    {{>static/head}}
+    <body class="background">
+      <!--Cabeçalho-->
+      {{>static/header}}
+      <!--Conteúdo Da Pagina-->
+      <main class="main">
+        <div class="texto">
+          <div id="texto">
+            <!--Importe do Template loginTemplate.mustache-->
+            {{>static/loginTemplate}}
+          </div>
+        </div>
+        <section class="localLogin">
+          <div class="loginQua">
+            <div class="posiImg">
+              <img src="/images/logoWolf.PNG" />
+            </div>
+            <!--Importe Template----->
+            {{>dynamic/formLogin}}
+          </div>
+        </section>
+      </main>
+      <!--Rodapé-->
+      <div class="footerOtrasPag">
+        {{>static/footer}}
+      </div>
+    </body>
+  </html>
+</html>
