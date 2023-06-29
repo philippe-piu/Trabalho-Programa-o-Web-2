@@ -23,3 +23,17 @@ que porventura estejam relacionados ao projeto</li>
 <li>Criar uma página de contato, no qual será possível enviar uma mensagem (por
 email) para os desenvolvedores da ferramenta. Os campos obrigatórios são
 nome, e-mail, assunto e mensagem (pesquisar sobre como enviar emails)</li>
+
+<h3> Comandos Utilizadoss</h3>
+<li>npm init</li>
+<li>npm install express</li>
+<li>npm install --save-dev nodemon</li>
+<li>npm install mustache-express</li>
+<li>npm install dotenv</li>
+<li>npm i nodemailer</li>
+<li>npm install mongoose</li>
+<li>npm install jsonwebtoken</li>
+<li>npm install express-validator</li>
+
+
+
