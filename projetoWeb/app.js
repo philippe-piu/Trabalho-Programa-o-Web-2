@@ -7,7 +7,7 @@ const PORT = 3000;
 const mustacheExpress = require("mustache-express");
 const dotenv = require('dotenv');
 var mongoose = require('mongoose');
-
+const cookieParser = require('cookie-parser');
 //Configuração do dotev do arquivo .env
 dotenv.config();
 
@@ -37,6 +37,7 @@ mustacheExpress.cache = null;
 // Configuração do Express
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }))
+app.use(cookieParser());
 
 
 

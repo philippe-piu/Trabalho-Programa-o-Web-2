@@ -8,29 +8,41 @@ const {chamadaForm} = require('../../front-end/javascripts/contactForm')
 const usersController = require('../controller/usersController');
 const loginController = require('../controller/loginController');
 
+
 const authenticateToken = (req, res, next) => {
-  const authHeader = req.headers['authorization'];
-  const token = authHeader && authHeader.split(' ')[1];
+  //pego o cookie criado
+  const token = req.cookies.token;
+
+  //se eu não tiver o tokkeen volto para login
   if (!token) {
-    return res.status(401).send('Não autorizado');
+    return res.redirect('/login');
   }
 
-  jwt.verify(token, secretKey, (err, user) => {
-    if (err) {
-      return res.status(403).send('Proibido');
+  //verifico a validade do tokken
+  jwt.verify(token, secretKey, (error, decoded) => {
+    if (error) {
+      return res.redirect('/login');
     }
-    req.user = user;
+
+    // Adicionando o ID do usuário ao objeto de requisição
+    req.userId = decoded.userId;
+
     next();
   });
 };
 
-//Rotas Dinâmicas
-//Rota Principal
+
+
 
 //Rota Principal
 router.get('/login', (req, res) => {
   res.render(path.join(__dirname, '../../front-end/views/dynamic/login'))
 })
+
+router.get('/logout', (req, res) => {
+  res.clearCookie('token');
+  res.redirect('/login');
+});
 
 router.get('/register', (req, res) => {
   res.render(path.join(__dirname, '../../front-end/views/dynamic/register'))
