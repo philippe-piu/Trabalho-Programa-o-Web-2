@@ -1,13 +1,14 @@
-const User = require('../model/users')
-const { check, validationResult } = require('express-validator')
+const User = require('../model/users');
+const { check, validationResult } = require('express-validator');
 
-//Função de criação de usuario
+// Função de criação de usuário
 const createUser = async (req, res) => {
   try {
     // Pega as informações do formulário
-    const { name, cpf, email, password } = req.body
+    const { name, cpf, email, password } = req.body;
 
     // Validação das informações do cadastro pelo Validator
+    //Promise.all guarda informações 
     await Promise.all([
       check('name').notEmpty().withMessage('Erro: verifique seu Nome').run(req),
       check('cpf')
@@ -22,46 +23,35 @@ const createUser = async (req, res) => {
         .isLength({ min: 4, max: 20 })
         .withMessage('Erro: verifique sua senha')
         .run(req)
-    ])
+    ]);
 
-    //Chamada de função
-    const errors = validationResult(req)
-    //Verificação de erro
+    // Chamada de função
+    const errors = validationResult(req);
+    // Verificação de erro
     if (!errors.isEmpty()) {
-      //Pego as mensagens de erro passados acima await Promise
-      const errorMessages = errors.array().map(error => error.msg)
-      const errorMessage = errorMessages.join(', ')
-      return res.send(
-        `<script>alert("${errorMessage}"); window.location.href = "/register";</script>`
-      )
+      // Pego as mensagens de erro passados acima await Promise
+      const errorMessages = errors.array().map(error => error.msg);
+      const errorMessage = errorMessages.join(', ');
+      return res.json({ error: errorMessage });
     }
 
-    //Caso eu tenha um usuario cadastrado no banco com cfp e email  faço um retorno
-    const existingUser = await User.findOne({ cpf, email })
+    // Caso eu tenha um usuário cadastrado no banco com CPF e email, faço um retorno
+    const existingUser = await User.findOne({ cpf, email });
     if (existingUser) {
-      return res.status(400).send(`
-        <script>
-          alert('Já existe um usuário com as mesmas informações.');
-          window.history.back();
-        </script>
-      `)
+      return res.status(400).json({ error: 'Já existe um usuário com as mesmas informações.' });
     }
 
-    //Armazenando as informações do formulario
-    const user = new User({ name, cpf, email, password })
-    await user.save()
+    // Armazenando as informações do formulário
+    const user = new User({ name, cpf, email, password });
+    await user.save();
 
-    //Em Caso de sucesso
-    console.log('Cadastro realizado com sucesso!')
-    res.send(
-      '<script>alert("Cadastro realizado com sucesso!"); window.location.href = "/login";</script>'
-    )
+    // Em caso de sucesso
+    console.log('Cadastro realizado com sucesso!');
+    res.json({ message: 'Cadastro realizado com sucesso!' });
   } catch (error) {
-    console.error('Erro ao criar usuário:', error)
-    res.send(
-      '<script>alert("Erro no registro de usuário"); window.location.href = "/register";</script>'
-    )
+    console.error('Erro ao criar usuário:', error);
+    res.json({ error: 'Erro no registro de usuário' });
   }
-}
+};
 
-module.exports = { createUser }
+module.exports = { createUser };

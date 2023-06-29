@@ -10,6 +10,8 @@ var mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 //Configuração do dotev do arquivo .env
 dotenv.config();
+const methodOverride = require('method-override');
+app.use(methodOverride('_method'));
 
 //Conexão com o Banco de dados MongoDB
 // URL de conexão do MongoDB

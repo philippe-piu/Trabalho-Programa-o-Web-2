@@ -9,6 +9,8 @@ const usersController = require('../controller/usersController');
 const loginController = require('../controller/loginController');
 
 
+
+
 const authenticateToken = (req, res, next) => {
   //pego o cookie criado
   const token = req.cookies.token;
@@ -31,10 +33,11 @@ const authenticateToken = (req, res, next) => {
   });
 };
 
+//Rotas
+router.get('/', (req, res) => {
+  res.render(path.join(__dirname, '../../front-end/views/dynamic/login'))
+})
 
-
-
-//Rota Principal
 router.get('/login', (req, res) => {
   res.render(path.join(__dirname, '../../front-end/views/dynamic/login'))
 })
@@ -44,31 +47,11 @@ router.get('/logout', (req, res) => {
   res.redirect('/login');
 });
 
-router.get('/register', (req, res) => {
-  res.render(path.join(__dirname, '../../front-end/views/dynamic/register'))
-})
-
 //Rota Contatic
 router.get('/contact', function (req, res, next) {
   res.render(path.join(__dirname, '../../front-end/views/dynamic/contact'))
 })
 
-//Home
-router.get('/home', authenticateToken, function (req, res, next) {
-  res.render(path.join(__dirname, '../../front-end/views/static/home'))
-})
-
-//perfil
-router.get('/perfil', authenticateToken, function (req, res, next) {
-  res.render(path.join(__dirname, '../../front-end/views/dynamic/perfil'))
-})
-
-//game
-router.get('/game', authenticateToken, function (req, res, next) {
-  res.render(path.join(__dirname, '../../front-end/views/dynamic/game'))
-})
-
-//Rotas Estáticas
 //Rota Description Author
 router.get('/description', function (req, res, next) {
   res.render(path.join(__dirname, '../../front-end/views/static/description'))
@@ -88,16 +71,31 @@ router.get('/technologies', function (req, res, next) {
 router.post('/contact/teste', chamadaForm);
 
 //API do Register
+//Home
+router.get('/home', authenticateToken, function (req, res, next) {
+  res.render(path.join(__dirname, '../../front-end/views/static/home'))
+})
+
+//game
+router.get('/game', authenticateToken, function (req, res, next) {
+  res.render(path.join(__dirname, '../../front-end/views/dynamic/game'))
+})
+
+//Register
 router.get('/register', (req, res) => {
   res.render(path.join(__dirname, '../../front-end/views/dynamic/register'))
 })
 router.post('/register', usersController.createUser);
 
 //Login
-router.get('/', (req, res) => {
-  res.render(path.join(__dirname, '../../front-end/views/dynamic/login'))
-})
 router.post('/login',loginController.loginUser);
+
+//perfil
+router.get('/perfil', authenticateToken, function (req, res, next) {
+  res.render(path.join(__dirname, '../../front-end/views/dynamic/perfil'));
+});
+
+
 
 
 module.exports = router

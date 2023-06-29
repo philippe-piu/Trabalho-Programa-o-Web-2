@@ -5,7 +5,7 @@
     {{>static/head}}
     <body class="background">
       <!--Cabeçalho-->
-      {{>static/header}}
+      {{>static/headerLogado}}
       <!--Conteúdo Da Pagina-->
       <main class="main">
         <div class="titulo">
@@ -13,14 +13,6 @@
         </div>
         <section class="localLogin">
           <div class="loginQua">
-            <div class="posiImg">
-              <div class="perfil">
-                <p>Nome: {{ user.name }}<p>
-                  <p>CPF: {{ user.cpf }}<p>
-                  <p>Email: {{ user.email }}</p>
-              </div>
-            </div>
-
             {{>dynamic/formPerfil}}
           </div>
         </section>
